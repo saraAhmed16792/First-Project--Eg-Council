@@ -9,15 +9,12 @@ import pages.*;
 
 public class ProductsSearchTest extends BaseTest{
     NavigationBarPage navigationBarPage;
+
     public ProductsSearchTest(){}
     // precondition
     @BeforeMethod
-    public void loginToApp(){
-        navigationBarPage = new NavigationBarPage(driver);
-        navigationBarPage.clickOnLoginFromNavBar();
+    public void openApp(){
 
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginToApp("sara.a.imbaby@gmail.com", "sara123");
         navigationBarPage = new NavigationBarPage(driver);
         ProductsPage productsPage = navigationBarPage.clickOnproductsFromNavBar();
         // Verify user is navigated to ALL PRODUCTS page successful
@@ -28,10 +25,8 @@ public class ProductsSearchTest extends BaseTest{
     public void testProductsNavigation(){
         ProductsPage productsPage = new ProductsPage(driver);
         productsPage.getNameProduct("Blue Top");
-        productsPage.clickElement(By.xpath("//*[@id=\"submit_search\"]"));
-
-
-
+        ProductsPage productsPage1 = new ProductsPage(driver);
+        productsPage1.clickOnSearchBtn();
 
 
         // Verify 'SEARCHED PRODUCTS' is visible
@@ -40,7 +35,7 @@ public class ProductsSearchTest extends BaseTest{
 
         //Verify all the products related to search are visible
         ProductsSearchPage productsSearchPage =new ProductsSearchPage(driver);
-       Assert.assertEquals(productsSearchPage.getSearchedTxt(),"View Product");
+       Assert.assertEquals(productsSearchPage.getSearchedTxt(),"Blue Top");
 
 
 

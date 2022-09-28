@@ -9,7 +9,7 @@ public class ProductsSearchPage extends BasePage {
     }
 
 
-    By searchedProductsTxt = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[2]/ul/li/a");
+    By searchedProductsTxt = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/p");
 
 
     public String getSearchedTxt() {
@@ -17,6 +17,7 @@ public class ProductsSearchPage extends BasePage {
 
 
     }
+
 }
 
 

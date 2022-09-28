@@ -24,6 +24,7 @@ public class LoginTest extends BaseTest {
         //login to App
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginToApp("sara.a.imbaby@gmail.com", "sara123");
+        Assert.assertEquals(loginPage.getLoginName(),"Sara Ahmed");
 
 
 

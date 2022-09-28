@@ -13,7 +13,7 @@ public class ProductsPage extends BasePage {
 
     By allProductsTxt = By.className("title");
     By searchProductField = By.xpath("//*[@id=\"search_product\"]");
-    By checkSameKeyword = By.xpath("/html/body/section[2]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/p");
+    By searchBtn = By.xpath("//*[@id=\"submit_search\"]");
 
 
     public String getAllProductsTxt() {
@@ -25,10 +25,10 @@ public class ProductsPage extends BasePage {
         this.typeOnInputField(this.searchProductField,productName);
         return new ProductsSearchPage(driver);
     }
-
-    public String getTheSameKeyword() {
-        return this.getTextOfWebElement(this.checkSameKeyword);
+    public void clickOnSearchBtn (){
+        clickElement(searchBtn);
     }
+
 
 }
 

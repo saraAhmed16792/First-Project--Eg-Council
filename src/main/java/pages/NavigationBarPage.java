@@ -16,7 +16,6 @@ public class NavigationBarPage extends BasePage {
 
     //Operations
     public ProductsPage clickOnLoginFromNavBar(){
-        //driver.findElement(loginFromNavbar).click();
         clickElement(loginFromNavbar);
         return new ProductsPage(driver);
     }
